@@ -340,15 +340,15 @@ namespace hicbit {
     }
 
     /**
-    *	Set the speed of the number 1 motor and number 2 motor, range of -100~100, that can control the tank to go advance or turn of.
+    *	Set the speed of the number 1 motor and number 2 motor, range of -255~255, that can control turn.
     */
-    //% weight=98 blockGap=50 blockId=setMotor block="Set motor1 speed|%speed1|and motor2|speed %speed2"
-    //% speed1.min=-1000 speed1.max=1000
-    //% speed2.min=-1000 speed2.max=1000
+    //% weight=98 blockGap=50 blockId=hicbit_setMotorSpeed block="Set motor1 speed|%speed1|and motor2|speed %speed2"
+    //% speed1.min=-255 speed1.max=255
+    //% speed2.min=-255 speed2.max=255
     export function setMotorSpeed(speed1: number, speed2: number) {
         let Turn: number = 0;//电机1：正 电机2：正
 
-        if (speed1 > 1000 || speed1 < -1000 || speed2 > 1000 || speed2 < -1000) {
+        if (speed1 > 255 || speed1 < -255 || speed2 > 255 || speed2 < -255) {
             return;
         } 
         if (speed1 < 0) {

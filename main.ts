@@ -4,6 +4,8 @@
 //% weight=10 icon="\uf211" color=#6A5ACD
 namespace hicbit {
 
+    export let NEW_LINE = "\r\n";
+
     export enum hicbit_Colors {
         //% block="Red"
         Red = 0x01,
@@ -371,6 +373,7 @@ namespace hicbit {
         buf[2] = speed1;
         buf[3] = speed2;
         serial.writeBuffer(buf);
+        serial.writeString(NEW_LINE);
     }
 
 	
